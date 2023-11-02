@@ -1,6 +1,4 @@
-﻿//tes daffa
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +13,7 @@ namespace MatchThreeEngine
 	public sealed class Board : MonoBehaviour
 	{
 		//test 1
-
+		//tes daffa
 		[SerializeField] private TileTypeAsset[] tileTypes;
 
 		[SerializeField] private Row[] rows;
