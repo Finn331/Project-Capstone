@@ -5,7 +5,7 @@ using TMPro;
 public class TimerSetting : MonoBehaviour
 {
     public TextMeshProUGUI TextTimer;
-    public float Waktu = 100; // 01:40 (dalam detik)
+    [SerializeField] private float Waktu = 100; // 01:40 (dalam detik)
 
     private bool GameAktif = true;
     public GameObject CanvasKalah;
