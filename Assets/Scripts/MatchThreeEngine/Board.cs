@@ -12,6 +12,8 @@ namespace MatchThreeEngine
 {
 	public sealed class Board : MonoBehaviour
 	{
+		public Player player;
+		public Enemy enemy;
 		[SerializeField] private TileTypeAsset[] tileTypes;
 
 		[SerializeField] private Row[] rows;
@@ -121,7 +123,7 @@ namespace MatchThreeEngine
 				if (_selection.Count > 0)
 				{
 					if (Math.Abs(tile.x - _selection[0].x) == 1 && Math.Abs(tile.y - _selection[0].y) == 0
-					    || Math.Abs(tile.y - _selection[0].y) == 1 && Math.Abs(tile.x - _selection[0].x) == 0)
+						|| Math.Abs(tile.y - _selection[0].y) == 1 && Math.Abs(tile.x - _selection[0].x) == 0)
 						_selection.Add(tile);
 				}
 				else
@@ -167,10 +169,10 @@ namespace MatchThreeEngine
 			var sequence = DOTween.Sequence();
 
 			sequence.Join(icon1Transform.DOMove(icon2Transform.position, tweenDuration).SetEase(Ease.OutBack))
-			        .Join(icon2Transform.DOMove(icon1Transform.position, tweenDuration).SetEase(Ease.OutBack));
+					.Join(icon2Transform.DOMove(icon1Transform.position, tweenDuration).SetEase(Ease.OutBack));
 
 			await sequence.Play()
-			              .AsyncWaitForCompletion();
+						  .AsyncWaitForCompletion();
 
 			icon1Transform.SetParent(tile2.transform);
 			icon2Transform.SetParent(tile1.transform);
@@ -206,9 +208,13 @@ namespace MatchThreeEngine
 				foreach (var tile in tiles) deflateSequence.Join(tile.icon.transform.DOScale(Vector3.zero, tweenDuration).SetEase(Ease.InBack));
 
 				audioSource.PlayOneShot(matchSound);
+				Debug.Log("suara");
+				player.Attack();
+
+				enemy.TakingAttack(player.attack);
 
 				await deflateSequence.Play()
-				                     .AsyncWaitForCompletion();
+									 .AsyncWaitForCompletion();
 
 				var inflateSequence = DOTween.Sequence();
 
@@ -220,7 +226,7 @@ namespace MatchThreeEngine
 				}
 
 				await inflateSequence.Play()
-				                     .AsyncWaitForCompletion();
+									 .AsyncWaitForCompletion();
 
 				OnMatch?.Invoke(Array.Find(tileTypes, tileType => tileType.id == match.TypeId), match.Tiles.Length);
 

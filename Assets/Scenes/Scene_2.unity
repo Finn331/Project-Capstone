@@ -3235,6 +3235,7 @@ GameObject:
   - component: {fileID: 540270512}
   - component: {fileID: 540270511}
   - component: {fileID: 540270510}
+  - component: {fileID: 540270513}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -3330,6 +3331,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540270513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540270509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a75e4306b32464a8b32e32b1764f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  attack: 2
 --- !u!1 &680534306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9932,6 +9947,7 @@ GameObject:
   - component: {fileID: 1702285454}
   - component: {fileID: 1702285453}
   - component: {fileID: 1702285452}
+  - component: {fileID: 1702285455}
   m_Layer: 0
   m_Name: 1_1
   m_TagString: Untagged
@@ -10027,6 +10043,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1702285455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702285451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf6648eea1edb54a8734e8b44ba9fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  attack: 2
 --- !u!114 &1877339845 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5226691900894377657, guid: df8b52aafe6c88149ab932c15584d90a, type: 3}
@@ -10192,6 +10222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6ec82f2e7648bc8496f897f3212a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 540270513}
+  enemy: {fileID: 1702285455}
   tileTypes:
   - {fileID: 11400000, guid: d3cd1a0e3bdca2d4e879bd382f0ebb0f, type: 2}
   - {fileID: 11400000, guid: ca55f697ab5526746864f7a215ad2ec9, type: 2}
