@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void Attack(int attack)
+    public void Attack(/*int attack*/)
     {
         Debug.Log("Enemy Attack");
         anim.SetTrigger("player_kick");
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //anim player nya die
+            //anim enemy nya die
         }
     }
 }

@@ -2,19 +2,61 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections.Generic;
+
 
 public class TimerSetting : MonoBehaviour
 {
-    public TextMeshProUGUI TextTimer;
-    [SerializeField] private float Waktu = 100; // 01:40 (dalam detik)
+    // testing
+    public Player player;
+    public Enemy enemy;
 
-    private bool GameAktif = true;
+
+
+    public TextMeshProUGUI TextTimer;
+    [SerializeField] private float Waktu; // 01:40 (dalam detik)
+    [SerializeField] private float intervalSeranganMusuh ; // Interval waktu serangan musuh dalam detik
+    private float waktuTerakhirSeranganMusuh;
+
+    public bool GameAktif = true;
     public GameObject CanvasKalah;
 
     private float s;
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
+
+
+
+
+        // untuk mekanik musuh menyerang setiap interval waktu yang dikasih
+        if (GameAktif)
+        {
+           
+                // Cek apakah musuh harus menyerang
+                if (Time.time - waktuTerakhirSeranganMusuh >= intervalSeranganMusuh)
+                {
+                // Musuh menyerang
+                enemy.Attack();
+
+                player.TakingDamage(enemy.attack);
+
+                // Catat waktu serangan terakhir musuh
+                waktuTerakhirSeranganMusuh = Time.time;
+                }
+            
+
+           
+        }
+
+
+
         if (GameAktif)
         {
             s += Time.deltaTime;
@@ -43,11 +85,7 @@ public class TimerSetting : MonoBehaviour
         // Format Menit dan Detik menjadi teks sesuai dengan kebutuhan (misalnya, menampilkan "01:40").
         string formattedTime = string.Format("{0:00}:{1:00}", Menit, Detik);
 
-        //Bang gua ga ngerti buat set tiap 5 detik enemy nya bakal nyerang (emot batu)
-        // if (Detik % 5 == 0)
-        //     {
-                 
-        //     }
+        
         // // Set teks pada komponen TextTimer.
         TextTimer.text = formattedTime;
     }
