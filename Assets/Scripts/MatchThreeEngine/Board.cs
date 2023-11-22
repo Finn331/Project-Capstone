@@ -211,7 +211,7 @@ namespace MatchThreeEngine
 				Debug.Log("suara");
 				player.Attack();
 
-				enemy.TakingAttack(player.attack);
+				enemy.TakingDamage(player.attack);
 
 				await deflateSequence.Play()
 									 .AsyncWaitForCompletion();

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class TimerSetting : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class TimerSetting : MonoBehaviour
         // Format Menit dan Detik menjadi teks sesuai dengan kebutuhan (misalnya, menampilkan "01:40").
         string formattedTime = string.Format("{0:00}:{1:00}", Menit, Detik);
 
+        //Bang gua ga ngerti buat set tiap 5 detik enemy nya bakal nyerang (emot batu)
+        // if (Detik % 5 == 0)
+        //     {
+        //         StartCoroutine("Attack"); 
+        //     }
         // Set teks pada komponen TextTimer.
         TextTimer.text = formattedTime;
     }
