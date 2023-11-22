@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int hp = 100;
+    public int hp;
     public int attack;
     public int currentHealth;
     private Animator anim;
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Attack(int attack)
@@ -32,9 +32,9 @@ public class Enemy : MonoBehaviour
         Debug.Log("kena serang");
         currentHealth -= dmg;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             //anim player nya die
-        }        
+        }
     }
 }

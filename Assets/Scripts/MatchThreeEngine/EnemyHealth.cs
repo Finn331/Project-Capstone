@@ -14,10 +14,15 @@ public class EnemyHealth : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float fillValue = health.currentHealth / health.hp;
+        float fillValue = health.currentHealth;
         slider.value = fillValue;
     }
 }

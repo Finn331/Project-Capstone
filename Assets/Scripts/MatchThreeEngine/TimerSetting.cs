@@ -46,9 +46,9 @@ public class TimerSetting : MonoBehaviour
         //Bang gua ga ngerti buat set tiap 5 detik enemy nya bakal nyerang (emot batu)
         // if (Detik % 5 == 0)
         //     {
-        //         StartCoroutine("Attack"); 
+                 
         //     }
-        // Set teks pada komponen TextTimer.
+        // // Set teks pada komponen TextTimer.
         TextTimer.text = formattedTime;
     }
 }
