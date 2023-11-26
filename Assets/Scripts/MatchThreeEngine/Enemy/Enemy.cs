@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public TimerSetting timerSetting;
     public int hp;
     public int attack;
     public int currentHealth;
@@ -34,7 +36,9 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //anim enemy nya die
+            //anim player nya die
+            timerSetting.CanvasKalah.SetActive(true);
+            FindObjectOfType<TimerSetting>().GameAktif = false;
         }
     }
 }
