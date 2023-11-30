@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     public void Attack(/*int attack*/)
     {
         Debug.Log("Enemy Attack");
-        anim.SetTrigger("player_kick");
+        anim.SetTrigger("player_kick2");
     }
 
     public void TakingDamage(int dmg)
@@ -36,8 +36,8 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //anim player nya die
-            timerSetting.CanvasKalah.SetActive(true);
+            //anim enemy nya die
+            timerSetting.CanvasMenang.SetActive(true);
             FindObjectOfType<TimerSetting>().GameAktif = false;
         }
     }

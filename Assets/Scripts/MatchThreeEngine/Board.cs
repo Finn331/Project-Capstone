@@ -73,6 +73,7 @@ namespace MatchThreeEngine
 			if (ensureNoStartingMatches) StartCoroutine(EnsureNoStartingMatches());
 
 			OnMatch += (type, count) => Debug.Log($"Matched {count}x {type.name}.");
+			//menghitung seberapa yang match dan tipe nya apa
 		}
 
 		private void Update()

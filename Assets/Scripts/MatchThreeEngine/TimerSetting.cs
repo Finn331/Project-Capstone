@@ -20,6 +20,7 @@ public class TimerSetting : MonoBehaviour
 
     public bool GameAktif = true;
     public GameObject CanvasKalah;
+    public GameObject CanvasMenang;
 
     private float s;
     private Animator anim;
