@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MatchThreeEngine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,9 +16,6 @@ public class Player : MonoBehaviour
     //attack system
     public int attack;
     private Animator anim;
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +32,7 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         Debug.Log("attack");
-        anim.SetTrigger("player_kick");
+        anim.SetTrigger("player_kickT");
     }
 
     public void TakingDamage(int dmg)

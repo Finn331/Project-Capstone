@@ -23,10 +23,10 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void Attack(/*int attack*/)
+    public void EnemyAttack(/*int attack*/)
     {
         Debug.Log("Enemy Attack");
-        anim.SetTrigger("player_kick2");
+        anim.SetTrigger("enemy_kickT");
     }
 
     public void TakingDamage(int dmg)

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d742e6c1f64287bcbf4ece0ac2dc56, type: 3}
   m_Name: Parrot
   m_EditorClassIdentifier: 
-  id: 3
+  id: 4
   value: 5
   sprite: {fileID: 21300000, guid: 42490f7b2e9053348950d09563d16826, type: 3}

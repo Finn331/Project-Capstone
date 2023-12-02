@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d742e6c1f64287bcbf4ece0ac2dc56, type: 3}
   m_Name: Hippo
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   value: 5
   sprite: {fileID: 21300000, guid: 91b56f46e2ec02b4aac057c79235bc35, type: 3}

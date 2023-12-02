@@ -15,7 +15,7 @@ public class TimerSetting : MonoBehaviour
 
     public TextMeshProUGUI TextTimer;
     [SerializeField] private float Waktu; // 01:40 (dalam detik)
-    [SerializeField] private float intervalSeranganMusuh ; // Interval waktu serangan musuh dalam detik
+    [SerializeField] private float intervalSeranganMusuh; // Interval waktu serangan musuh dalam detik
     private float waktuTerakhirSeranganMusuh;
 
     public bool GameAktif = true;
@@ -39,21 +39,20 @@ public class TimerSetting : MonoBehaviour
         // untuk mekanik musuh menyerang setiap interval waktu yang dikasih
         if (GameAktif)
         {
-           
-                // Cek apakah musuh harus menyerang
-                if (Time.time - waktuTerakhirSeranganMusuh >= intervalSeranganMusuh)
-                {
-                // Musuh menyerang
-                enemy.Attack();
 
+            // Cek apakah musuh harus menyerang
+            if (Time.time - waktuTerakhirSeranganMusuh >= intervalSeranganMusuh)
+            {
                 player.TakingDamage(enemy.attack);
 
+                // Musuh menyerang
+                enemy.EnemyAttack();
                 // Catat waktu serangan terakhir musuh
                 waktuTerakhirSeranganMusuh = Time.time;
-                }
-            
+            }
 
-           
+
+
         }
 
 
@@ -86,7 +85,7 @@ public class TimerSetting : MonoBehaviour
         // Format Menit dan Detik menjadi teks sesuai dengan kebutuhan (misalnya, menampilkan "01:40").
         string formattedTime = string.Format("{0:00}:{1:00}", Menit, Detik);
 
-        
+
         // // Set teks pada komponen TextTimer.
         TextTimer.text = formattedTime;
     }
