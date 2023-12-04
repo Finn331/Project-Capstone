@@ -75,6 +75,7 @@ public class TimerSetting : MonoBehaviour
         }
 
         SetText();
+
     }
 
     private void SetText()
