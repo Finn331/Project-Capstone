@@ -9509,7 +9509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1367506922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9522,14 +9522,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88e601fabe957d46abd9c934723c4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 540270513}
-  enemy: {fileID: 1702285455}
+  player: {fileID: 0}
+  enemy: {fileID: 0}
   TextTimer: {fileID: 2100186948}
   Waktu: 60
   intervalSeranganMusuh: 5
   GameAktif: 1
   CanvasKalah: {fileID: 2038927762}
-  CanvasMenang: {fileID: 1884659074}
+  CanvasMenang: {fileID: 0}
 --- !u!4 &1367506923
 Transform:
   m_ObjectHideFlags: 0
@@ -10789,10 +10789,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 540270513}
-    - target: {fileID: 596802221369853712, guid: d205d276d38e29e40914b435cdbedacd, type: 3}
-      propertyPath: GameAktif
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 596802221369853712, guid: d205d276d38e29e40914b435cdbedacd, type: 3}
       propertyPath: CanvasKalah
       value: 

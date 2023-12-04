@@ -5,34 +5,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public TimerSetting timerSetting;
-    //public GameObject CanvasKalah;
-
-    //hp system
     public int hp;
     public int currentHealth;
-
-    //attack system
     public int attack;
     private Animator anim;
-    // Start is called before the first frame update
+    /*public TileTypeAsset[] tileType;*/ // Tambahkan ini untuk menyimpan referensi ke TileTypeAsset array
+
     void Start()
     {
         anim = GetComponent<Animator>();
         currentHealth = hp;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void Attack()
     {
         Debug.Log("attack");
         anim.SetTrigger("player_kickT");
+        
     }
 
     public void TakingDamage(int dmg)
@@ -44,7 +34,57 @@ public class Player : MonoBehaviour
         {
             //anim player nya die
             timerSetting.CanvasKalah.SetActive(true);
-            FindObjectOfType<TimerSetting>().GameAktif = false;
+            timerSetting.GameAktif = false;
         }
     }
+    //public void TriggerAnimation(int tileTypeID)
+    //{
+    //    if (tileTypeID >= 1 && tileTypeID <= 5)
+    //    {
+    //        TileTypeAsset currentTileType = tileType[tileTypeID - 1];
+
+    //        if (currentTileType != null)
+    //        {
+    //            switch (currentTileType.id)
+    //            {
+    //                case 1:
+    //                    anim.SetTrigger("Animation1");
+    //                    Debug.Log("Tile Type 1");
+    //                    break;
+
+    //                case 2:
+    //                    anim.SetTrigger("Animation2");
+    //                    Debug.Log("Tile Type 2");
+    //                    break;
+
+    //                case 3:
+    //                    anim.SetTrigger("Animation3");
+    //                    Debug.Log("Tile Type 3");
+    //                    break;
+
+    //                case 4:
+    //                    anim.SetTrigger("Animation4");
+    //                    Debug.Log("Tile Type 4");
+    //                    break;
+
+    //                case 5:
+    //                    anim.SetTrigger("Animation5");
+    //                    Debug.Log("Tile Type 5");
+    //                    break;
+
+    //                default:
+    //                    Debug.LogWarning($"Unhandled TileTypeAsset ID: {currentTileType.id}");
+    //                    break;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            Debug.LogError($"TileTypeAsset with ID {tileTypeID} is null!");
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError($"Invalid TileTypeID: {tileTypeID}. It should be between 1 and 5.");
+    //    }
+    //}
 }

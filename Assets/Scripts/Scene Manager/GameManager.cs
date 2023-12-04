@@ -24,4 +24,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void Level1()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Scene_2");
+    }
 }
