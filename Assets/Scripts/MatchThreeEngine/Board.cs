@@ -14,7 +14,7 @@ namespace MatchThreeEngine
 	{
 		public Player player;
 		public Enemy enemy;
-		[SerializeField] private TileTypeAsset[] tileTypes;
+		[SerializeField] private List<TileTypeAsset> tileTypes;
 
 		[SerializeField] private Row[] rows;
 
@@ -53,6 +53,18 @@ namespace MatchThreeEngine
 			}
 		}
 
+		private void Awake()
+		{
+			foreach (var item in tileTypes)
+			{
+				if (LevelManger.Instance.slotAnim.Contains(item.animName) == false)
+				{
+					tileTypes.Remove(item);
+					break;
+				}
+			}
+		}
+
 		private void Start()
 		{
 			for (var y = 0; y < rows.Length; y++)
@@ -64,7 +76,7 @@ namespace MatchThreeEngine
 					tile.x = x;
 					tile.y = y;
 
-					tile.Type = tileTypes[Random.Range(0, tileTypes.Length)];
+					tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
 
 					tile.button.onClick.AddListener(() => Select(tile));
 				}
@@ -210,7 +222,7 @@ namespace MatchThreeEngine
 
 				audioSource.PlayOneShot(matchSound);
 				Debug.Log("suara");
-				player.Attack();
+				player.Attack(match.Tiles[0].TypeId);
 
 				enemy.TakingDamage(player.attack);
 
@@ -221,7 +233,7 @@ namespace MatchThreeEngine
 
 				foreach (var tile in tiles)
 				{
-					tile.Type = tileTypes[Random.Range(0, tileTypes.Length)];
+					tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
 
 					inflateSequence.Join(tile.icon.transform.DOScale(Vector3.one, tweenDuration).SetEase(Ease.OutBack));
 				}
@@ -229,7 +241,8 @@ namespace MatchThreeEngine
 				await inflateSequence.Play()
 									 .AsyncWaitForCompletion();
 
-				OnMatch?.Invoke(Array.Find(tileTypes, tileType => tileType.id == match.TypeId), match.Tiles.Length);
+				TileTypeAsset matchingTileType = tileTypes.Where(tileType => tileType.id == match.TypeId).FirstOrDefault();
+				OnMatch?.Invoke(matchingTileType, match.Tiles.Length);
 
 				match = TileDataMatrixUtility.FindBestMatch(Matrix);
 			}
@@ -245,7 +258,7 @@ namespace MatchThreeEngine
 
 			foreach (var row in rows)
 				foreach (var tile in row.tiles)
-					tile.Type = tileTypes[Random.Range(0, tileTypes.Length)];
+					tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
 
 			_isShuffling = false;
 		}

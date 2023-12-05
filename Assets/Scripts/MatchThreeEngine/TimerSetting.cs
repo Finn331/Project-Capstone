@@ -21,6 +21,7 @@ public class TimerSetting : MonoBehaviour
     public bool GameAktif = true;
     public GameObject CanvasKalah;
     public GameObject CanvasMenang;
+    public bool isCountdown;
 
     private float s;
     private Animator anim;
@@ -28,11 +29,22 @@ public class TimerSetting : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        StartCoroutine(DelayStartEnemy());
+    }
+
+    private IEnumerator DelayStartEnemy()
+    {
+        isCountdown = true;
+        yield return new WaitForSeconds(2f);
+        isCountdown = false;
     }
 
     private void Update()
     {
-
+        if (isCountdown)
+        {
+            return;
+        }
 
 
 

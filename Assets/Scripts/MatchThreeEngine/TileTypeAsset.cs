@@ -10,5 +10,6 @@ namespace MatchThreeEngine
 		public int value;
 
 		public Sprite sprite;
+		public string animName;
 	}
 }

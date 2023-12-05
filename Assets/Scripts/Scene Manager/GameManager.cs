@@ -18,9 +18,16 @@ public class GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     // Update is called once per frame
@@ -72,5 +79,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-   
+
 }
