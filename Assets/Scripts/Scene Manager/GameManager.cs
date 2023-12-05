@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public void Level1()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Scene_2");
+        SceneManager.LoadScene("Level1");
     }
 
     public void Level2()
