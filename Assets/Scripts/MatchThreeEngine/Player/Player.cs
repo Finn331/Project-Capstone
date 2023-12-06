@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject TimerManager;
     public TimerSetting timerSetting;
     public int hp;
     public int currentHealth;
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
             //anim player nya die
             timerSetting.CanvasKalah.SetActive(true);
             timerSetting.GameAktif = false;
+            TimerManager.gameObject.SetActive(false);
         }
     }
     public void TriggerAnimation(int tileTypeID)

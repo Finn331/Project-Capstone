@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject TimerManager;
     public TimerSetting timerSetting;
     public int hp;
     public int attack;
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour
             //anim enemy nya die
             timerSetting.CanvasMenang.SetActive(true);
             timerSetting.GameAktif = false;
-            this.GetComponent<Enemy>().enabled = false;
+            TimerManager.gameObject.SetActive(false);
         }
     }
 }

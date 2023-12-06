@@ -13409,6 +13409,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5af0f2ae4a054274bb6fd3c1c996364f, type: 2}
     - target: {fileID: 9191199708429892048, guid: fbfb283e77bf0c3429a83267e995e913, type: 3}
+      propertyPath: TimerManager
+      value: 
+      objectReference: {fileID: 1367506921}
+    - target: {fileID: 9191199708429892048, guid: fbfb283e77bf0c3429a83267e995e913, type: 3}
       propertyPath: tileTypessss
       value: 
       objectReference: {fileID: 11400000, guid: d34cbff47bdbf7e4fb873fa4dd8feaf9, type: 2}
@@ -13497,6 +13501,10 @@ PrefabInstance:
       propertyPath: attack
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
+      propertyPath: TimerManager
+      value: 
+      objectReference: {fileID: 1367506921}
     - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: timerSetting
       value: 
