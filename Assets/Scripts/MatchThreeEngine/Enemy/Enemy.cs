@@ -8,17 +8,15 @@ public class Enemy : MonoBehaviour
 {
     public GameObject TimerManager;
     public TimerSetting timerSetting;
-
     public int hp;
     public int attack;
     public int currentHealth;
-    
     private Animator anim;
-
     public Image progressionBar;
     public Slider sliderCoba;
-
+    public SkillPoint healthDisplay;
     // Start is called before the first frame update
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,7 +28,7 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    public void EnemyAttack(/*/int attack/*/)
+    public void EnemyAttack(/*int attack*/)
     {
         Debug.Log("Enemy Attack");
         anim.SetTrigger("enemy_kickT");
@@ -38,21 +36,21 @@ public class Enemy : MonoBehaviour
 
     public void TakingDamage(int dmg)
     {
-        Debug.Log("kena serang");
+       Debug.Log("kena serang");
         currentHealth -= dmg;
 
         if (currentHealth <= 50)
         {
             float fillValue = 1;
             sliderCoba.value = fillValue;
-
+            healthDisplay.UpdateHealthDisplay(fillValue);
         }
         if (currentHealth <= 25)
         {
             float fillValue = 2;
             sliderCoba.value = fillValue;
+            healthDisplay.UpdateHealthDisplay(fillValue);
         }
-
 
         if (currentHealth <= 0)
         {
@@ -62,6 +60,7 @@ public class Enemy : MonoBehaviour
             TimerManager.gameObject.SetActive(false);
             float fillValue = 3;
             sliderCoba.value = fillValue;
+            healthDisplay.UpdateHealthDisplay(fillValue);
         }
     }
 }
