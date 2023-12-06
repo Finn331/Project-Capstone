@@ -35,7 +35,7 @@ public class TimerSetting : MonoBehaviour
     private IEnumerator DelayStartEnemy()
     {
         isCountdown = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         isCountdown = false;
     }
 

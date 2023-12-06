@@ -38,7 +38,8 @@ public class Enemy : MonoBehaviour
         {
             //anim enemy nya die
             timerSetting.CanvasMenang.SetActive(true);
-            FindObjectOfType<TimerSetting>().GameAktif = false;
+            timerSetting.GameAktif = false;
+            this.GetComponent<Enemy>().enabled = false;
         }
     }
 }
