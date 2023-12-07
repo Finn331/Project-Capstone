@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     public Image progressionBar;
     public Slider sliderCoba;
     public SkillPoint healthDisplay;
+
+    private bool addedValue50 = false;
+    private bool addedValue25 = false;
+    private bool addedValue0 = false;
     // Start is called before the first frame update
 
     void Start()
@@ -38,31 +42,46 @@ public class Enemy : MonoBehaviour
 
     public void TakingDamage(int dmg)
     {
-       Debug.Log("kena serang");
+        Debug.Log("kena serang");
         currentHealth -= dmg;
 
-        if (currentHealth <= 50)
+        if (currentHealth <= 50 && !addedValue50)
         {
             float fillValue = 1;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
+            SaveManager.instance.coin += 1;
+            SaveManager.instance.Save();
+
+            // Set addedValue50 menjadi true agar tidak ditambahkan lagi
+            addedValue50 = true;
         }
-        if (currentHealth <= 25)
+        else if (currentHealth <= 25 && !addedValue25)
         {
             float fillValue = 2;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
-        }
+            SaveManager.instance.coin += 1;
+            SaveManager.instance.Save();
 
-        if (currentHealth <= 0)
+            // Set addedValue25 menjadi true agar tidak ditambahkan lagi
+            addedValue25 = true;
+        }
+        else if (currentHealth <= 0 && !addedValue0)
         {
-            //anim enemy nya die
+            // anim enemy nya die
             timerSetting.CanvasMenang.SetActive(true);
             timerSetting.GameAktif = false;
             TimerManager.gameObject.SetActive(false);
             float fillValue = 3;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
+
+            SaveManager.instance.coin += 1;
+            SaveManager.instance.Save();
+
+            // Set addedValue0 menjadi true agar tidak ditambahkan lagi
+            addedValue0 = true;
         }
     }
 }

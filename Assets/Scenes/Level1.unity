@@ -7930,6 +7930,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1702285455}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: DisableScriptEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1274877791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14024,6 +14036,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: attack
       value: 5
       objectReference: {fileID: 0}
@@ -14036,6 +14052,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1507044242}
     - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
+      propertyPath: PauseOverlay
+      value: 
+      objectReference: {fileID: 2059948525}
+    - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: TimerManager
       value: 
       objectReference: {fileID: 1367506921}
@@ -14043,6 +14063,10 @@ PrefabInstance:
       propertyPath: timerSetting
       value: 
       objectReference: {fileID: 2100186947}
+    - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
+      propertyPath: currentHealth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3289393194068152666, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: healthDisplay
       value: 
