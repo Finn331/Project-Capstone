@@ -19,19 +19,6 @@ public class Player : MonoBehaviour
         currentHealth = hp;
     }
 
-    public void SavePlayer()
-    {
-        SaveSystem.SavePlayer(this);
-    }
-
-    public void LoadPlayer()
-    {
-        PlayerData data = SaveSystem.LoadPlayer();
-
-        attack = data.attack;
-        hp = data.hp;
-    }
-
     public void Attack(int a)
     {
         Debug.Log("attack");

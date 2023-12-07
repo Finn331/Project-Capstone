@@ -2,9 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillPoint : MonoBehaviour
+public class LevelPoint : MonoBehaviour
 {
-    public Text healthText; // Teks pada Canvas untuk menampilkan nilai fillValue
+    public Text pointText; // Teks pada Canvas untuk menampilkan nilai fillValue
 
     // Fungsi ini dipanggil ketika nilai fillValue berubah
 
@@ -14,12 +14,12 @@ public class SkillPoint : MonoBehaviour
     }
     public void UpdateHealthDisplay(float fillValue)
     {
-        healthText.text = fillValue.ToString();
+        pointText.text = fillValue.ToString();
     }
 
     // Metode untuk mengambil nilai fillValue
     public float GetFillValue()
     {
-        return float.Parse(healthText.text);
+        return float.Parse(pointText.text);
     }
 }

@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     public Image progressionBar;
     public Slider sliderCoba;
-    public SkillPoint healthDisplay;
+    public LevelPoint healthDisplay;
     // Start is called before the first frame update
 
     void Start()
