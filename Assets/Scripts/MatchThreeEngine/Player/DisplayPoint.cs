@@ -5,7 +5,7 @@ using TMPro;
 public class DisplayPoint : MonoBehaviour
 {
     public TextMeshProUGUI coin;
-    public LevelPoint levelPoint; // Referensi ke skrip SkillPoint
+    public SkillPoint levelPoint; // Referensi ke skrip SkillPoint
 
     void Start()
     {

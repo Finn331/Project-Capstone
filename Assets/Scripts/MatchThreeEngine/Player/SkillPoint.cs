@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelPoint : MonoBehaviour
+public class SkillPoint : MonoBehaviour
 {
     public Text pointText; // Teks pada Canvas untuk menampilkan nilai fillValue
 
