@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51d742e6c1f64287bcbf4ece0ac2dc56, type: 3}
-  m_Name: Giraffe
+  m_Name: Biru
   m_EditorClassIdentifier: 
-  id: 1
+  id: 4
   value: 5
-  sprite: {fileID: 21300000, guid: 3ad2f7c6dfaef2a4c8f8021a476554f9, type: 3}
-  animName: player_kickT
+  sprite: {fileID: 21300000, guid: cf743e9636011dd409f5e4d44ab682b3, type: 3}
+  animName: player_puch2
