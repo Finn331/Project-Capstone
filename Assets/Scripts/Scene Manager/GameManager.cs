@@ -55,6 +55,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Level2");
     }
+    public void Level3()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level2");
+    }
 
     // UI
     public void PauseUI()
