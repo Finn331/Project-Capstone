@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 4
   value: 5
   sprite: {fileID: 21300000, guid: cf743e9636011dd409f5e4d44ab682b3, type: 3}
-  animName: player_puch2
+  animName: player_kick3

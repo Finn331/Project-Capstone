@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d742e6c1f64287bcbf4ece0ac2dc56, type: 3}
   m_Name: Putih
   m_EditorClassIdentifier: 
-  id: 5
+  id: 3
   value: 5
   sprite: {fileID: 21300000, guid: fbac25e1b7c9db84d921d2be2d1123e4, type: 3}
-  animName: player_kick3
+  animName: player_punch1

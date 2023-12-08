@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 2
   value: 5
   sprite: {fileID: 21300000, guid: c44a4a9fa6e66a34fbb0a20d43867229, type: 3}
-  animName: player_kick
+  animName: player_kickA
