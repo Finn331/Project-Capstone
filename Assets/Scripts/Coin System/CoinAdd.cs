@@ -8,11 +8,13 @@ public class CoinAdd : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SaveManager.instance.coin += 1;
-            SaveManager.instance.Save();
+            // SaveManager.instance.coin += 1;
+            // SaveManager.instance.Save();
         }
         else if (Input.GetKeyDown(KeyCode.F))
-            SaveManager.instance.coin -= 1;
-            SaveManager.instance.Save();
+        {
+            // SaveManager.instance.coin -= 1;
+            // SaveManager.instance.Save();
+        }
     }
 }

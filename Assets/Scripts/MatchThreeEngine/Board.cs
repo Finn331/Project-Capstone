@@ -57,7 +57,7 @@ namespace MatchThreeEngine
 		{
 			foreach (var item in tileTypes)
 			{
-				if (LevelManger.Instance.slotAnim.Contains(item.animName) == false)
+				if (AnimationManager.Instance.slotAnim.Contains(item.animName) == false)
 				{
 					tileTypes.Remove(item);
 					break;

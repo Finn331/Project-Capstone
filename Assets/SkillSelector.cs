@@ -38,7 +38,7 @@ public class SkillSelector : MonoBehaviour
     {
         selectedSlot = slotIndex - 1 + 2;
         isSlotSelected = true;
-        selectedSkillStr = LevelManger.Instance.slotAnim[selectedSlot];
+        selectedSkillStr = AnimationManager.Instance.slotAnim[selectedSlot];
 
         int a = 0;
         foreach (var item in slotSkill)
@@ -58,7 +58,7 @@ public class SkillSelector : MonoBehaviour
 
     public void SelectSkill(int slotIndex)
     {
-        selectedSkillStr2 = LevelManger.Instance.movementAnim[slotIndex - 1];
+        selectedSkillStr2 = AnimationManager.Instance.movementAnim[slotIndex - 1];
         selectedSkill = slotIndex - 1;
 
         if (isSlotSelected == false)
@@ -66,13 +66,13 @@ public class SkillSelector : MonoBehaviour
             return;
         }
 
-        var match = LevelManger.Instance.slotAnim
+        var match = AnimationManager.Instance.slotAnim
             .FirstOrDefault(stringToCheck => stringToCheck.Contains(selectedSkillStr2));
 
         if (match == null)
         {
-            Debug.Log(LevelManger.Instance.slotAnim[selectedSlot]);
-            LevelManger.Instance.slotAnim[selectedSlot] = selectedSkillStr2;
+            Debug.Log(AnimationManager.Instance.slotAnim[selectedSlot]);
+            AnimationManager.Instance.slotAnim[selectedSlot] = selectedSkillStr2;
         }
 
 

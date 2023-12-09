@@ -16,37 +16,34 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Scene Loader
     public void BackToMenu()
     {
         Time.timeScale = 1;
+        AnimationManager.Instance.isLevelSelection = false;
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void Level1()
+    public void BackTolevelselection()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level1");
+        AnimationManager.Instance.isLevelSelection = true;
+        SceneManager.LoadScene("Main Menu");
     }
 
-    public void Level2()
+    public void LoadLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level2");
-    }
-    public void Level3()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level " + SaveManager.instance.level);
     }
 
     // UI

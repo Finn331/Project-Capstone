@@ -21,12 +21,30 @@ public class Enemy : MonoBehaviour
     private bool addedValue50 = false;
     private bool addedValue25 = false;
     private bool addedValue0 = false;
+
+    public int storedCoinWin;
     // Start is called before the first frame update
 
     void Start()
     {
         anim = GetComponent<Animator>();
         currentHealth = hp;
+
+
+        int randomAnimIndex = Random.Range(0, 3);
+
+        switch (SaveManager.instance.levelSelected)
+        {
+            case 1:
+                attack = 2;
+                break;
+            case 2:
+                attack = 20;
+                break;
+            case 3:
+                attack = 30;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -36,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     public void EnemyAttack(/*int attack*/)
     {
-        Debug.Log("Enemy Attack");
+        // Debug.Log("Enemy Attack");
         anim.SetTrigger("enemy_kickT");
     }
 
@@ -50,8 +68,8 @@ public class Enemy : MonoBehaviour
             float fillValue = 1;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
-            SaveManager.instance.coin += 1;
-            SaveManager.instance.Save();
+            storedCoinWin += 1;
+
 
             // Set addedValue50 menjadi true agar tidak ditambahkan lagi
             addedValue50 = true;
@@ -61,8 +79,7 @@ public class Enemy : MonoBehaviour
             float fillValue = 2;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
-            SaveManager.instance.coin += 1;
-            SaveManager.instance.Save();
+            storedCoinWin += 1;
 
             // Set addedValue25 menjadi true agar tidak ditambahkan lagi
             addedValue25 = true;
@@ -76,8 +93,10 @@ public class Enemy : MonoBehaviour
             float fillValue = 3;
             sliderCoba.value = fillValue;
             healthDisplay.UpdateHealthDisplay(fillValue);
+            storedCoinWin += 1;
 
-            SaveManager.instance.coin += 1;
+            SaveManager.instance.coin += storedCoinWin;
+            SaveManager.instance.level += 1;
             SaveManager.instance.Save();
 
             // Set addedValue0 menjadi true agar tidak ditambahkan lagi

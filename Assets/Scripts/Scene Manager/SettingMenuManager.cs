@@ -13,10 +13,10 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject selectLevel;
     public GameObject skillPanel;
 
-    [Header("Setting Button List")]
-    public GameObject level1;
-    public GameObject level2;
-    public GameObject level3;
+    // [Header("Setting Button List")]
+    // public GameObject level1;
+    // public GameObject level2;
+    // public GameObject level3;
 
 
     void Start()
@@ -25,7 +25,10 @@ public class SettingMenuManager : MonoBehaviour
         settingPanel.SetActive(false);
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
-        selectLevel.SetActive(false);
+        selectLevel.SetActive(AnimationManager.Instance.isLevelSelection);
+
+        SaveManager.instance.Load();
+
     }
 
     public void Level1()
@@ -36,9 +39,6 @@ public class SettingMenuManager : MonoBehaviour
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
         selectLevel.SetActive(false);
-        level1.SetActive(true);
-        level2.SetActive(false);
-        level3.SetActive(false);
     }
     public void Level2()
     {
@@ -48,9 +48,6 @@ public class SettingMenuManager : MonoBehaviour
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
         selectLevel.SetActive(false);
-        level1.SetActive(false);
-        level2.SetActive(true);
-        level3.SetActive(false);
     }
     public void Level3()
     {
@@ -60,9 +57,6 @@ public class SettingMenuManager : MonoBehaviour
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
         selectLevel.SetActive(false);
-        level1.SetActive(false);
-        level2.SetActive(false);
-        level3.SetActive(true);
     }
 
     public void SettingButton()
@@ -107,6 +101,7 @@ public class SettingMenuManager : MonoBehaviour
 
     public void SelectLevelButton()
     {
-        SceneManager.LoadScene("LevelSelection");
+        // SceneManager.LoadScene("LevelSelection");
+        selectLevel.SetActive(true);
     }
 }

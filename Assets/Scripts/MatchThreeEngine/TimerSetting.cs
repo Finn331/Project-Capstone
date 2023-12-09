@@ -34,6 +34,7 @@ public class TimerSetting : MonoBehaviour
 
     private IEnumerator DelayStartEnemy()
     {
+
         isCountdown = true;
         yield return new WaitForSeconds(2);
         isCountdown = false;
@@ -41,10 +42,6 @@ public class TimerSetting : MonoBehaviour
 
     private void Update()
     {
-        if (isCountdown)
-        {
-            return;
-        }
 
 
 
@@ -52,9 +49,15 @@ public class TimerSetting : MonoBehaviour
         if (GameAktif)
         {
 
+
             // Cek apakah musuh harus menyerang
             if (Time.time - waktuTerakhirSeranganMusuh >= intervalSeranganMusuh)
             {
+                if (isCountdown)
+                {
+                    return;
+                }
+
                 player.TakingDamage(enemy.attack);
 
                 // Musuh menyerang
