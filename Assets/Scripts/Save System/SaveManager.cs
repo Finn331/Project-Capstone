@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
     //what we want to save
     public int coin;
     public int attack;
+    //public int level;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class SaveManager : MonoBehaviour
 
             coin = data.coin;
             attack = data.attack;
+            //level = data.level;
 
             file.Close();
         }
@@ -46,6 +48,7 @@ public class SaveManager : MonoBehaviour
 
         data.coin = coin;
         data.attack = attack;
+        //data.level = level;
 
         bf.Serialize(file, data);
         file.Close();
@@ -57,5 +60,6 @@ public class SaveManager : MonoBehaviour
     {
         public int coin;
         public int attack;
+        //public int level;
     }
 }

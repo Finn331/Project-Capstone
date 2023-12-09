@@ -107,10 +107,6 @@ public class SettingMenuManager : MonoBehaviour
 
     public void SelectLevelButton()
     {
-        mainMenuPanel.SetActive(false);
-        settingPanel.SetActive(false);
-        languagesPanel.SetActive(false);
-        audioPanel.SetActive(false);
-        selectLevel.SetActive(true);
+        SceneManager.LoadScene("LevelSelection");
     }
 }
