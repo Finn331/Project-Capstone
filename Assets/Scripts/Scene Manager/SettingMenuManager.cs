@@ -12,6 +12,13 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject audioPanel;
     public GameObject selectLevel;
     public GameObject skillPanel;
+
+    [Header("Setting Button List")]
+    public GameObject level1;
+    public GameObject level2;
+    public GameObject level3;
+
+
     void Start()
     {
         mainMenuPanel.SetActive(true);
@@ -29,7 +36,35 @@ public class SettingMenuManager : MonoBehaviour
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
         selectLevel.SetActive(false);
+        level1.SetActive(true);
+        level2.SetActive(false);
+        level3.SetActive(false);
     }
+    public void Level2()
+    {
+        skillPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+        settingPanel.SetActive(false);
+        languagesPanel.SetActive(false);
+        audioPanel.SetActive(false);
+        selectLevel.SetActive(false);
+        level1.SetActive(false);
+        level2.SetActive(true);
+        level3.SetActive(false);
+    }
+    public void Level3()
+    {
+        skillPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+        settingPanel.SetActive(false);
+        languagesPanel.SetActive(false);
+        audioPanel.SetActive(false);
+        selectLevel.SetActive(false);
+        level1.SetActive(false);
+        level2.SetActive(false);
+        level3.SetActive(true);
+    }
+
     public void SettingButton()
     {
         mainMenuPanel.SetActive(false);
