@@ -11,6 +11,7 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject languagesPanel;
     public GameObject audioPanel;
     public GameObject selectLevel;
+    public GameObject skillPanel;
     void Start()
     {
         mainMenuPanel.SetActive(true);
@@ -20,6 +21,15 @@ public class SettingMenuManager : MonoBehaviour
         selectLevel.SetActive(false);
     }
 
+    public void Level1()
+    {
+        skillPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+        settingPanel.SetActive(false);
+        languagesPanel.SetActive(false);
+        audioPanel.SetActive(false);
+        selectLevel.SetActive(false);
+    }
     public void SettingButton()
     {
         mainMenuPanel.SetActive(false);

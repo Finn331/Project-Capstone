@@ -5,11 +5,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveManager : MonoBehaviour
 {
+    
   public static SaveManager instance {  get; private set; }
 
     //what we want to save
     public int coin;
-
+    public int attack;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class SaveManager : MonoBehaviour
             PlayerData_Storage data = (PlayerData_Storage)bf.Deserialize(file);
 
             coin = data.coin;
+            attack = data.attack;
 
             file.Close();
         }
@@ -43,6 +45,7 @@ public class SaveManager : MonoBehaviour
         PlayerData_Storage data = new PlayerData_Storage();
 
         data.coin = coin;
+        data.attack = attack;
 
         bf.Serialize(file, data);
         file.Close();
@@ -53,5 +56,6 @@ public class SaveManager : MonoBehaviour
     class PlayerData_Storage
     {
         public int coin;
+        public int attack;
     }
 }

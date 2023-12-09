@@ -1,11 +1,10 @@
+using MatchThreeEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-using Unity.VisualScripting;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     // GameObject
     public GameObject PauseOverlay;
@@ -13,29 +12,18 @@ public class GameManager : MonoBehaviour
     public GameObject Pause;
     public GameObject Board;
 
-    public static GameManager Instance;
-
-
-
+    public static LevelManager Instance;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
 
     // Scene Loader
     public void BackToMenu()
@@ -84,5 +72,4 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

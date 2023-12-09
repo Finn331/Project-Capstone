@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoinAdd : MonoBehaviour
 {
-    public SkillPoint healthDisplay;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

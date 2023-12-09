@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public TimerSetting timerSetting;
     public int hp;
     public int currentHealth;
-    public int attack;
+    public int attack = SaveManager.instance.attack;
     private Animator anim;
     public TileTypeAsset[] tileType; // Tambahkan ini untuk menyimpan referensi ke TileTypeAsset array
 
@@ -17,8 +17,14 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentHealth = hp;
-    }
 
+
+    }
+    void Update()
+    {
+        attack = SaveManager.instance.attack;
+
+    }
     public void Attack(int a)
     {
         Debug.Log("attack");

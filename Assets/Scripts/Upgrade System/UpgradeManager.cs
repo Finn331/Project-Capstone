@@ -17,8 +17,10 @@ public class UpgradeManager : MonoBehaviour
         
     }
 
-    public void Upgrade() 
+    public void BuyUpgrade() 
     {
-        
+        SaveManager.instance.coin -= 2;
+        SaveManager.instance.attack += 2;
+        SaveManager.instance.Save();
     }
 }
