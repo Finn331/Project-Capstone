@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     public GameObject Effect;
     public GameObject Pause;
     public GameObject Board;
-    public SettingMenuManager settingMenuManager;
 
     public static LevelManager Instance;
     // Start is called before the first frame update
@@ -21,14 +20,9 @@ public class LevelManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void SelectLevel()
+    void Update()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Main Menu");
-        if(settingMenuManager.selectLevel != null)
-        {
-            
-        }
+        
     }
 
     // Scene Loader
