@@ -14604,6 +14604,10 @@ PrefabInstance:
       propertyPath: CanvasMenang
       value: 
       objectReference: {fileID: 1884659074}
+    - target: {fileID: 596802221369853712, guid: d205d276d38e29e40914b435cdbedacd, type: 3}
+      propertyPath: intervalSeranganMusuh
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2505050722402093044, guid: d205d276d38e29e40914b435cdbedacd, type: 3}
       propertyPath: m_text
       value: 00:00
@@ -14889,7 +14893,7 @@ PrefabInstance:
     - target: {fileID: 979054948101747860, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88367bd0c8d6c4e40b7f94192041eef1, type: 3}
+      objectReference: {fileID: 21300000, guid: b24e333cba47fe44abae7397b463de6d, type: 3}
     - target: {fileID: 979054948101747860, guid: 0b1c5a8060d533f4cb7453580913f724, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

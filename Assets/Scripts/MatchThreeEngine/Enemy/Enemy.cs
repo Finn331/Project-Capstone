@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
         currentHealth = hp;
 
 
-        int randomAnimIndex = Random.Range(0, 3);
+        int indeksAnimasiAcak = Random.Range(0, 3);
+        RandomAnim(indeksAnimasiAcak);
 
         switch (SaveManager.instance.levelSelected)
         {
@@ -46,16 +47,28 @@ public class Enemy : MonoBehaviour
                 break;
         }
     }
-
     // Update is called once per frame
-    void Update()
+    void RandomAnim(int index)
     {
+        switch (index)
+        {
+            case 0:
+                anim.SetTrigger("enemy_kickT");
+                break;
+            case 1:
+                anim.SetTrigger("enemy_kickA");
+                break;
+            case 2:
+                anim.SetTrigger("enemy_punch");
+                break;
+        }
     }
 
     public void EnemyAttack(/*int attack*/)
     {
         // Debug.Log("Enemy Attack");
-        anim.SetTrigger("enemy_kickT");
+        int indeksAnimasiAcak = Random.Range(0, 3);
+        RandomAnim(indeksAnimasiAcak);
     }
 
     public void TakingDamage(int dmg)

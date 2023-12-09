@@ -24,6 +24,4 @@ public class NextSceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("levelAt", nextScene);
         }
     }
-
-  
 }
