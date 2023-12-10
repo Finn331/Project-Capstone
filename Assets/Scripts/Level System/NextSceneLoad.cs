@@ -16,12 +16,14 @@ public class NextSceneLoad : MonoBehaviour
     public void Next()
     {
         // Move to next level
-        SceneManager.LoadScene(nextScene);
+
+        SaveManager.instance.levelSelected++;
+        SceneManager.LoadScene("Level 1");
 
         // Setting Int for Index
-        if(nextScene > PlayerPrefs.GetInt("levelAt"))
-        {
-            PlayerPrefs.SetInt("levelAt", nextScene);
-        }
+        // if(nextScene > PlayerPrefs.GetInt("levelAt"))
+        // {
+        //     PlayerPrefs.SetInt("levelAt", nextScene);
+        // }
     }
 }

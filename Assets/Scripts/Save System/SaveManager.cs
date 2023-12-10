@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour
     public int coin;
     public int attack;
     public int level;
+    public int health;
 
     public int levelSelected;
 
@@ -42,6 +43,7 @@ public class SaveManager : MonoBehaviour
                 coin = data.coin;
                 attack = data.attack;
                 level = data.level;
+                health = data.health;
 
                 file.Close();
             }
@@ -55,6 +57,7 @@ public class SaveManager : MonoBehaviour
                 data.coin = 0;
                 data.attack = 10;
                 data.level = 1;
+                data.health = 100;
 
                 Debug.Log("Save Game");
 
@@ -67,6 +70,7 @@ public class SaveManager : MonoBehaviour
                 coin = data.coin;
                 attack = data.attack;
                 level = data.level;
+                health = data.health;
             }
         }
         catch
@@ -84,6 +88,7 @@ public class SaveManager : MonoBehaviour
         data.coin = coin;
         data.attack = attack;
         data.level = level;
+        data.health = health;
 
         // string json = JsonUtility.ToJson(data);
         // File.WriteAllText(Application.persistentDataPath + "playerData.json", json);
@@ -106,5 +111,6 @@ public class SaveManager : MonoBehaviour
         public int coin;
         public int attack;
         public int level;
+        public int health;
     }
 }

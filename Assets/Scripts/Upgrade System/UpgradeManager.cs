@@ -8,27 +8,41 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void BuyUpgrade() 
+    public void BuyUpgrade()
+    {
+        if (SaveManager.instance.coin <= 2)
+        {
+            Debug.Log("Insufficient Coin");
+            SaveManager.instance.coin += 0;
+        }
+        if (SaveManager.instance.coin >= 2)
+        {
+            SaveManager.instance.coin -= 2;
+            SaveManager.instance.attack += 2;
+            SaveManager.instance.Save();
+        }
+    }
+    public void BuyHealth()
 {
     if (SaveManager.instance.coin <= 2)
     {
         Debug.Log("Insufficient Coin");
         SaveManager.instance.coin += 0;
-    } 
-    if (SaveManager.instance.coin >= 2) 
-    { 
-    SaveManager.instance.coin -= 2;
-    SaveManager.instance.attack += 2;
-    SaveManager.instance.Save();
+    }
+    if (SaveManager.instance.coin >= 2)
+    {
+        SaveManager.instance.coin -= 2;
+        SaveManager.instance.health += 2;
+        SaveManager.instance.Save();
     }
 }
 }

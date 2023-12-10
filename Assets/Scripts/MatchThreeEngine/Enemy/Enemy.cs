@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MatchThreeEngine;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,9 @@ public class Enemy : MonoBehaviour
     private bool addedValue0 = false;
 
     public int storedCoinWin;
+
+    public Board board;
+
     // Start is called before the first frame update
 
     void Start()
@@ -114,6 +118,8 @@ public class Enemy : MonoBehaviour
 
             // Set addedValue0 menjadi true agar tidak ditambahkan lagi
             addedValue0 = true;
+
+            board.KillAllSequance();
         }
     }
 }

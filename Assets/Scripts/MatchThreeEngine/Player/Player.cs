@@ -13,12 +13,16 @@ public class Player : MonoBehaviour
     private Animator anim;
     public TileTypeAsset[] tileType; // Tambahkan ini untuk menyimpan referensi ke TileTypeAsset array
 
+    public AudioSource audio;
+    public AudioClip attackSfx;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         currentHealth = hp;
         attack = SaveManager.instance.attack;
-
+        audio = GetComponent<AudioSource>();
+        hp = SaveManager.instance.health;
     }
     void Update()
     {
@@ -100,4 +104,10 @@ public class Player : MonoBehaviour
             Debug.LogError($"Invalid TileTypeID: {tileTypeID}. It should be between 1 and 5.");
         }
     }
+
+    public void AttackSfx()
+    {
+        audio.PlayOneShot(attackSfx);
+    }
+
 }

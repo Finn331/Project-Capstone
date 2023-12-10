@@ -36,6 +36,10 @@ namespace MatchThreeEngine
 
 		public event Action<TileTypeAsset, int> OnMatch;
 
+		private Sequence deflateSequence;
+		private Sequence inflateSequence;
+		private Sequence sequence;
+
 		private TileData[,] Matrix
 		{
 			get
@@ -179,7 +183,7 @@ namespace MatchThreeEngine
 			icon1Transform.SetAsLastSibling();
 			icon2Transform.SetAsLastSibling();
 
-			var sequence = DOTween.Sequence();
+			sequence = DOTween.Sequence();
 
 			sequence.Join(icon1Transform.DOMove(icon2Transform.position, tweenDuration).SetEase(Ease.OutBack))
 					.Join(icon2Transform.DOMove(icon1Transform.position, tweenDuration).SetEase(Ease.OutBack));
@@ -210,44 +214,51 @@ namespace MatchThreeEngine
 
 			var match = TileDataMatrixUtility.FindBestMatch(Matrix);
 
-			while (match != null)
+			try
 			{
-				didMatch = true;
-
-				var tiles = GetTiles(match.Tiles);
-
-				var deflateSequence = DOTween.Sequence();
-
-				foreach (var tile in tiles) deflateSequence.Join(tile.icon.transform.DOScale(Vector3.zero, tweenDuration).SetEase(Ease.InBack));
-
-				audioSource.PlayOneShot(matchSound);
-				Debug.Log("suara");
-				player.Attack(match.Tiles[0].TypeId);
-
-				enemy.TakingDamage(player.attack);
-
-				await deflateSequence.Play()
-									 .AsyncWaitForCompletion();
-
-				var inflateSequence = DOTween.Sequence();
-
-				foreach (var tile in tiles)
+				while (match != null)
 				{
-					tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
+					didMatch = true;
 
-					inflateSequence.Join(tile.icon.transform.DOScale(Vector3.one, tweenDuration).SetEase(Ease.OutBack));
+					var tiles = GetTiles(match.Tiles);
+
+					deflateSequence = DOTween.Sequence();
+
+					foreach (var tile in tiles) deflateSequence.Join(tile.icon.transform.DOScale(Vector3.zero, tweenDuration).SetEase(Ease.InBack));
+
+					audioSource.PlayOneShot(matchSound);
+					Debug.Log("suara");
+					player.Attack(match.Tiles[0].TypeId);
+
+					enemy.TakingDamage(player.attack);
+
+					await deflateSequence.Play()
+										 .AsyncWaitForCompletion();
+
+					inflateSequence = DOTween.Sequence();
+
+					foreach (var tile in tiles)
+					{
+						tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
+
+						inflateSequence.Join(tile.icon.transform.DOScale(Vector3.one, tweenDuration).SetEase(Ease.OutBack));
+					}
+
+					await inflateSequence.Play()
+										 .AsyncWaitForCompletion();
+
+					TileTypeAsset matchingTileType = tileTypes.Where(tileType => tileType.id == match.TypeId).FirstOrDefault();
+					OnMatch?.Invoke(matchingTileType, match.Tiles.Length);
+
+					match = TileDataMatrixUtility.FindBestMatch(Matrix);
 				}
 
-				await inflateSequence.Play()
-									 .AsyncWaitForCompletion();
-
-				TileTypeAsset matchingTileType = tileTypes.Where(tileType => tileType.id == match.TypeId).FirstOrDefault();
-				OnMatch?.Invoke(matchingTileType, match.Tiles.Length);
-
-				match = TileDataMatrixUtility.FindBestMatch(Matrix);
+				_isMatching = false;
 			}
+			catch
+			{
 
-			_isMatching = false;
+			}
 
 			return didMatch;
 		}
@@ -261,6 +272,18 @@ namespace MatchThreeEngine
 					tile.Type = tileTypes[Random.Range(0, tileTypes.Count)];
 
 			_isShuffling = false;
+		}
+
+		public void KillAllSequance()
+		{
+
+			deflateSequence.AsyncWaitForKill();
+			inflateSequence.AsyncWaitForKill();
+			sequence.AsyncWaitForKill();
+
+			deflateSequence = null;
+			inflateSequence = null;
+			sequence = null;
 		}
 	}
 }
