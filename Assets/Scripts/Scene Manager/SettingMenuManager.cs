@@ -13,6 +13,10 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject selectLevel;
     public GameObject skillPanel;
 
+    [Header("Setting Menu On LEVEL 1")]
+    public GameObject pauseOverlay;
+    public GameObject settingMenu;
+
     // [Header("Setting Button List")]
     // public GameObject level1;
     // public GameObject level2;
@@ -29,6 +33,11 @@ public class SettingMenuManager : MonoBehaviour
 
         SaveManager.instance.Load();
 
+    }
+
+    public void closeSetting()
+    {
+        settingMenu.SetActive(false);
     }
 
     public void Level1()
@@ -66,6 +75,11 @@ public class SettingMenuManager : MonoBehaviour
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
         selectLevel.SetActive(false);
+    }
+    public void SettingButton2()
+    {
+        settingPanel.SetActive(true);
+        pauseOverlay.SetActive(false);
     }
 
     public void LanguagesButton()
