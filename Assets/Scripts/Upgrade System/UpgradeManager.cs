@@ -18,9 +18,17 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void BuyUpgrade() 
+{
+    if (SaveManager.instance.coin <= 2)
     {
-        SaveManager.instance.coin -= 2;
-        SaveManager.instance.attack += 2;
-        SaveManager.instance.Save();
+        Debug.Log("Insufficient Coin");
+        SaveManager.instance.coin += 0;
+    } 
+    if (SaveManager.instance.coin >= 2) 
+    { 
+    SaveManager.instance.coin -= 2;
+    SaveManager.instance.attack += 2;
+    SaveManager.instance.Save();
     }
+}
 }
