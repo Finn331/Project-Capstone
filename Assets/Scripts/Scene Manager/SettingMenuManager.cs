@@ -12,6 +12,7 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject audioPanel;
     public GameObject selectLevel;
     public GameObject skillPanel;
+    public GameObject creditsPanel;
 
     [Header("Setting Menu On LEVEL 1")]
     public GameObject pauseOverlay;
@@ -117,5 +118,15 @@ public class SettingMenuManager : MonoBehaviour
     {
         // SceneManager.LoadScene("LevelSelection");
         selectLevel.SetActive(true);
+    }
+
+    public void CreditsButton()
+    {
+        creditsPanel.SetActive(true);
+    }
+    
+    public void CreditsButton2()
+    {
+        creditsPanel.SetActive(false);
     }
 }
