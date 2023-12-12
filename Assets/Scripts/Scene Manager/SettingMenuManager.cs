@@ -26,7 +26,6 @@ public class SettingMenuManager : MonoBehaviour
     // public GameObject level2;
     // public GameObject level3;
 
-
     void Start()
     {
         mainMenuPanel.SetActive(true);
@@ -124,6 +123,7 @@ public class SettingMenuManager : MonoBehaviour
         // SceneManager.LoadScene("LevelSelection");
         selectLevel.SetActive(true);
         UpgradePanel.SetActive(false);
+        pressButton.SetActive(false);
     }
 
     public void CreditsButton()
