@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public TileTypeAsset[] tileType; // Tambahkan ini untuk menyimpan referensi ke TileTypeAsset array
 
     public AudioSource audio;
-    public AudioClip attackSfx;
+    public AudioClip punchSfx;
+    public AudioClip kickSfx;
 
     void Start()
     {
@@ -105,9 +106,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void AttackSfx()
+    public void PunchSfx()
     {
-        audio.PlayOneShot(attackSfx);
+        audio.PlayOneShot(punchSfx);
+    }
+    public void KickSfx()
+    {
+        audio.PlayOneShot(kickSfx);
     }
 
 }

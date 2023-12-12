@@ -1,6 +1,7 @@
 using MatchThreeEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public GameObject Effect;
     public GameObject Pause;
     public GameObject Board;
+    public GameObject HolderSettingPanel;
+    public GameObject HolderAudioPanel;
 
     public static LevelManager Instance;
     // Start is called before the first frame update
@@ -59,10 +62,31 @@ public class LevelManager : MonoBehaviour
     public void ResumeUI()
     {
         Pause.SetActive(true);
+        HolderSettingPanel.SetActive(false);
+        HolderAudioPanel.SetActive(false);
         PauseOverlay.SetActive(false);
         Effect.SetActive(false);
-        Time.timeScale = 1f;
         Board.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
+    public void SettingUI()
+    {
+        PauseOverlay.SetActive(false);
+        HolderSettingPanel.SetActive(true);
+        HolderAudioPanel.SetActive(false);
+        Board.SetActive(false);
+        Time.timeScale = 0f;
+
+    }
+
+    public void AudioUI()
+    {
+        HolderAudioPanel.SetActive(true);
+        HolderSettingPanel.SetActive(true);
+        PauseOverlay.SetActive(false);
+        Board.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     public void ExitGame()

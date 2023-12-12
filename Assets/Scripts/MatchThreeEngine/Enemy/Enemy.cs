@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     public int storedCoinWin;
 
     public Board board;
+    public AudioSource audio;
+    public AudioClip kicksSfx;
 
     // Start is called before the first frame update
 
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentHealth = hp;
+        audio = GetComponent<AudioSource>();
 
 
         int indeksAnimasiAcak = Random.Range(0, 3);
@@ -40,13 +43,15 @@ public class Enemy : MonoBehaviour
         switch (SaveManager.instance.levelSelected)
         {
             case 1:
-                attack = 2;
+                attack = 5;
                 break;
             case 2:
-                attack = 20;
+                hp = 120;
+                attack = 7;
                 break;
             case 3:
-                attack = 30;
+                hp = 150;
+                attack = 10;
                 break;
         }
     }
@@ -120,5 +125,9 @@ public class Enemy : MonoBehaviour
 
             board.KillAllSequance();
         }
+    }
+    public void EnemySfx()
+    {
+        audio.PlayOneShot(kicksSfx);
     }
 }

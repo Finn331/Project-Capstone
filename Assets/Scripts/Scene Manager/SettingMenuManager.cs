@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SettingMenuManager : MonoBehaviour
 {
     [Header("Setting Menu Panel List")]
+    public GameObject canvas;
     public GameObject mainMenuPanel;
     public GameObject settingPanel;
     public GameObject languagesPanel;
@@ -13,6 +14,8 @@ public class SettingMenuManager : MonoBehaviour
     public GameObject selectLevel;
     public GameObject skillPanel;
     public GameObject creditsPanel;
+    public GameObject UpgradePanel;
+    public GameObject pressButton;
 
     [Header("Setting Menu On LEVEL 1")]
     public GameObject pauseOverlay;
@@ -107,7 +110,9 @@ public class SettingMenuManager : MonoBehaviour
 
     public void BackToMenu()
     {
+        canvas.SetActive(true);
         mainMenuPanel.SetActive(true);
+        pressButton.SetActive(false);
         settingPanel.SetActive(false);
         languagesPanel.SetActive(false);
         audioPanel.SetActive(false);
@@ -118,6 +123,7 @@ public class SettingMenuManager : MonoBehaviour
     {
         // SceneManager.LoadScene("LevelSelection");
         selectLevel.SetActive(true);
+        UpgradePanel.SetActive(false);
     }
 
     public void CreditsButton()
