@@ -126,6 +126,7 @@ public class Enemy : MonoBehaviour
             board.KillAllSequance();
         }
     }
+
     public void EnemySfx()
     {
         audio.PlayOneShot(kicksSfx);

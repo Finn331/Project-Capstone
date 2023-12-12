@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public AudioSource audio;
     public AudioClip punchSfx;
     public AudioClip kickSfx;
+    public GameObject floatingTextPrefab;
 
     void Start()
     {
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
         if (tileTypeID >= 1 && tileTypeID <= 5)
         {
             TileTypeAsset currentTileType = tileType[tileTypeID - 1];
-
+            ShowDamage(tileTypeID.ToString());
             if (currentTileType != null)
             {
                 // switch (currentTileType.id)
@@ -103,6 +104,14 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogError($"Invalid TileTypeID: {tileTypeID}. It should be between 1 and 5.");
+        }
+    }
+    void ShowDamage(string text)
+    {
+        if(floatingTextPrefab)
+        {
+            GameObject prefab = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
         }
     }
 

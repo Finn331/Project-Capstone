@@ -17344,6 +17344,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100186947}
     - target: {fileID: 9191199708429892048, guid: fbfb283e77bf0c3429a83267e995e913, type: 3}
+      propertyPath: floatingTextPrefab
+      value: 
+      objectReference: {fileID: 3447902440968433960, guid: 7d9722de71b7a904197a4cdf6e7e95ec, type: 3}
+    - target: {fileID: 9191199708429892048, guid: fbfb283e77bf0c3429a83267e995e913, type: 3}
       propertyPath: tileType.Array.size
       value: 5
       objectReference: {fileID: 0}
