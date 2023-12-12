@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         if (tileTypeID >= 1 && tileTypeID <= 5)
         {
             TileTypeAsset currentTileType = tileType[tileTypeID - 1];
-            ShowDamage(tileTypeID.ToString());
+            ShowDamage(currentTileType.animName.ToString());
             if (currentTileType != null)
             {
                 // switch (currentTileType.id)

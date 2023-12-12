@@ -95,10 +95,10 @@ AnimatorStateMachine:
     m_Position: {x: 540, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6152364371645949354}
-    m_Position: {x: 260, y: 260, z: 0}
+    m_Position: {x: 280, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5438320743554187957}
-    m_Position: {x: 420, y: -140, z: 0}
+    m_Position: {x: 390, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 976951873730864358}
     m_Position: {x: 530, y: -30, z: 0}
@@ -148,7 +148,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: player_kick3
+    m_ConditionEvent: Kick 3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5438320743554187957}
@@ -173,7 +173,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: player_kick4
+    m_ConditionEvent: Kick B
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 976951873730864358}
@@ -220,7 +220,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: player_kickA
+    m_ConditionEvent: Kick A
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1814688721133757093}
@@ -245,7 +245,7 @@ AnimatorController:
   m_Name: 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: player_kickT
+  - m_Name: Kick T
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -257,25 +257,25 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: player_kickA
+  - m_Name: Kick A
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: player_punch
+  - m_Name: Punch
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: player_kick3
+  - m_Name: Kick 3
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: player_kick4
+  - m_Name: Kick B
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -384,7 +384,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: player_kickT
+    m_ConditionEvent: Kick T
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1416084521611826358}
@@ -458,7 +458,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: player_punch
+    m_ConditionEvent: Punch
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6152364371645949354}

@@ -4805,16 +4805,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementAnim:
-  - player_kickT
-  - player_kickA
-  - player_punch
-  - player_kick3
-  - player_kick4
+  - Kick T
+  - Kick A
+  - Punch
+  - Kick 3
+  - Kick B
   slotAnim:
-  - player_kickT
-  - player_kickA
-  - player_punch
-  - player_kick4
+  - Kick T
+  - Kick A
+  - Punch
+  - Kick B
   isLevelSelection: 0
 --- !u!1 &662794090
 GameObject:

@@ -55,7 +55,7 @@ public class SaveManager : MonoBehaviour
                 PlayerData_Storage data = new PlayerData_Storage();
 
                 data.coin = 0;
-                data.attack = 10;
+                data.attack = 5;
                 data.level = 1;
                 data.health = 100;
 
