@@ -46,11 +46,13 @@ public class Enemy : MonoBehaviour
                 attack = 5;
                 break;
             case 2:
-                hp = 120;
+                hp = 110;
+                currentHealth = 110;
                 attack = 7;
                 break;
             case 3:
-                hp = 150;
+                hp = 120;
+                currentHealth = 120;
                 attack = 10;
                 break;
         }

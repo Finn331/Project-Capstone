@@ -16,12 +16,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.maxValue = health.hp;
         float fillValue = health.currentHealth;
         slider.value = fillValue;
     }
