@@ -9,7 +9,7 @@ public class LevelSelector : MonoBehaviour
     public Button[] lvlButton;
 
     // Start is called before the first frame update
-    public void LoadListLevel()
+    public void Update()
     {
         int levelAt = SaveManager.instance.level;
 
