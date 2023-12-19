@@ -49,6 +49,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Level " + SaveManager.instance.level);
     }
 
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level " + SaveManager.instance.levelSelected);
+    }
+
     // UI
     public void PauseUI()
     {
@@ -57,6 +63,16 @@ public class LevelManager : MonoBehaviour
         Effect.SetActive(true);
         Time.timeScale = 0f;
         Board.SetActive(false);
+    }
+
+    public void PauseUI2()
+    {
+        //Pause.SetActive(false);
+        PauseOverlay.SetActive(true);
+        Effect.SetActive(true);
+        Time.timeScale = 0f;
+        Board.SetActive(false);
+        HolderSettingPanel.SetActive(false);
     }
 
     public void ResumeUI()
