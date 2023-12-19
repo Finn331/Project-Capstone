@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level " + SaveManager.instance.level);
+        SceneManager.LoadScene("Level 1");
     }
 
     // UI

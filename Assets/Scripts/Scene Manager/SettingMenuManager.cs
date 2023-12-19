@@ -38,6 +38,11 @@ public class SettingMenuManager : MonoBehaviour
 
     }
 
+    public void LevelSelected(int level)
+    {
+        SaveManager.instance.levelSelected = level;
+    }
+
     public void closeSetting()
     {
         settingMenu.SetActive(false);
